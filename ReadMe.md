@@ -13,4 +13,4 @@
     - Анимация на кнопке удаления
 
 Ссылка:
-https://rolling-scopes-school.github.io/clean-code-s1e1/
+https://davmmag.github.io/clean-code-s1e1/
