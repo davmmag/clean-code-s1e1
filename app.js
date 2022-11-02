@@ -47,6 +47,7 @@ const addTask = (value) => {
     const listItem = createNewTask(value);
     INCOMPLETE_LIST.append(listItem);
     bindTaskEvents(listItem, completeTask);
+    INPUT_ADD.value = '';
 }
 
 const editTask = (e) => {
