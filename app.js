@@ -3,9 +3,7 @@ const INPUT_ADD = document.querySelector('.add-section__input');
 const INCOMPLETE_LIST = document.querySelector('.list--incomplete');
 const LIST_ITEMS = document.querySelectorAll('.list__item');
 const COMPLETE_LIST = document.querySelector('.list--complete');
-let value = INPUT_ADD.value;
-INPUT_ADD.addEventListener('input', () => value = INPUT_ADD.value);
-
+window.addEventListener('load', () => INPUT_ADD.value = '');
 const createNewTask = (value) => {
     const listItem = document.createElement('li');
     const checkBox = document.createElement('input');
@@ -47,7 +45,6 @@ const addTask = (value) => {
     const listItem = createNewTask(value);
     INCOMPLETE_LIST.append(listItem);
     bindTaskEvents(listItem, completeTask);
-    INPUT_ADD.value = '';
 }
 
 const editTask = (e) => {
@@ -92,5 +89,8 @@ for (let item of LIST_ITEMS) {
 }
 
 BTN_ADD.addEventListener('click', () => {
-    if (value.length !== 0) addTask(value);
+    if (INPUT_ADD.value.length !== 0) {
+        addTask(INPUT_ADD.value);
+        INPUT_ADD.value = '';
+    }
 });
